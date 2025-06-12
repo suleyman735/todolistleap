@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todolistleap/core/constant/theme.dart';
+import 'package:todolistleap/ui-design/home_screen.dart';
 import 'package:todolistleap/ui-design/signup.dart';
 import 'package:todolistleap/ui-design/splash_screen.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/login',
         routes: {
           '/login': (context) => const LoginRegisterScreen(),
-           '/home': (context) => const HomeScreen(), // You'll need to create this
+           '/home': (context) =>  HomePage(), // You'll need to create this
         },
       ),
     );
@@ -53,14 +54,4 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
-      body: const Center(child: Text('Welcome to Home Page!')),
-    );
-  }
-}
