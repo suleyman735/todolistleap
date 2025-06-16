@@ -6,23 +6,23 @@
 #  Project Title: Leap To Do App
 #  Objective: A task management app with secure authentication, multiple task views, data visualization, and logout functionality.
 #  Presenter: Suleyman
-#  Date: June 16, 2025
+#  Date: June 15, 2025
 
-# Slide 2: Project Overview
+#  Project Overview
 
     Problem Statement: Users need a secure, intuitive app to manage and visualize tasks with easy logout.
     Goals:
-    Implement authentication with login/logout using BLoC pattern.
-    Develop homepage, calendar, and chart views for task management.
-    Store tasks in a SQLite database.
+        Implement authentication with login/logout using BLoC pattern.
+        Develop homepage, calendar, and chart views for task management.
+        Store tasks in a SQLite database.
 #  Design
     Design Concept: Modern UI with blue and white colors, rounded cards, shadows, interactive charts, and consistent drawer for logout.
     Key Features:
-    Login/registration screens with input validation.
-    Homepage with task list and filters.
-    Calendar page with date-based task filtering.
-    Chart page with task completion visualization.
-    Drawer-based logout across main screens.
+        Login/registration screens with input validation.
+        Homepage with task list and filters.
+        Calendar page with date-based task filtering.
+        Chart page with task completion visualization.
+        Drawer-based logout across main screens.
 #  Login and Logout Functionality
     Description: Built authentication system with login and logout using BLoC, accessible via drawer.
     What I Did:
@@ -71,7 +71,7 @@
     Added calendar page for date-based filtering.
     Created chart page for task visualization.
     Integrated SQLite with DatabaseHelper.
-# # Tools: Flutter, Dart, SharedPreferences, sqflite, TableCalendar, fl_chart.
+#  Tools: Flutter, Dart, SharedPreferences, sqflite, TableCalendar, fl_chart.
 #  Conclusion
     Summary: Built a task management app with secure login/logout, multiple task views, and data visualization using Flutter and BLoC.
     Takeaways: Mastered BLoC, SQLite, TableCalendar, fl_chart, and Flutter UI design.
