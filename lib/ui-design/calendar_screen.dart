@@ -16,31 +16,8 @@ import 'package:todolistleap/ui-widgets/custom_bottom_app_bar.dart';
 import 'package:todolistleap/ui-widgets/custom_drawer.dart';
 import 'package:todolistleap/ui-widgets/task_modals.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:table_calendar/table_calendar.dart';
-import 'package:todolistleap/blocs/auth_bloc.dart';
-import 'package:todolistleap/blocs/auth_event.dart';
-import 'package:todolistleap/blocs/task_bloc.dart';
-import 'package:todolistleap/blocs/task_event.dart';
-import 'package:todolistleap/blocs/task_state.dart';
-import 'package:todolistleap/core/constant/colors.dart';
-import 'package:todolistleap/core/constant/typography.dart';
-import 'package:todolistleap/ui-widgets/custom_app_bar.dart';
-import 'package:todolistleap/ui-widgets/custom_bottom_app_bar.dart';
-import 'package:todolistleap/ui-widgets/custom_drawer.dart';
-import 'package:todolistleap/ui-widgets/task_modals.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:table_calendar/table_calendar.dart';
-import 'package:todolistleap/blocs/auth_bloc.dart';
-import 'package:todolistleap/blocs/auth_event.dart';
-import 'package:todolistleap/blocs/task_bloc.dart';
-import 'package:todolistleap/blocs/task_event.dart';
-import 'package:todolistleap/blocs/task_state.dart';
+
 
 
 class CalendarScreen extends StatefulWidget {

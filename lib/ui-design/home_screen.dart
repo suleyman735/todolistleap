@@ -140,18 +140,38 @@ class _HomePageState extends State<HomePage> {
                           ),
                           const SizedBox(width: 8),
                           // Completion filter
-                          DropdownButton<bool?>(
-                            value: state.showCompleted,
+                          DropdownButton<String>(
+                            key: ValueKey(state.showCompleted),
+                            value: state.showCompleted == null
+                                ? 'all'
+                                : (state.showCompleted! ? 'completed' : 'not_completed'),
                             style: AppTypography.bodyMedium,
                             items: const [
-                              DropdownMenuItem(value: true, child: Text('Completed')),
-                              DropdownMenuItem(value: false, child: Text('Not Completed')),
-                              DropdownMenuItem(value: null, child: Text('All')),
+                              DropdownMenuItem(value: 'completed', child: Text('Completed')),
+                              DropdownMenuItem(value: 'not_completed', child: Text('Not Completed')),
+                              DropdownMenuItem(value: 'all', child: Text('All')),
                             ],
                             onChanged: (value) {
-                              context.read<TaskBloc>().add(FilterTasksEvent(showCompleted: value));
+                              print('Selected value: $value');
+                              context.read<TaskBloc>().add(FilterTasksEvent(
+                                showCompleted: value == 'all' ? null : value == 'completed',
+                              ));
                             },
-                          ),
+                          )
+
+
+                          // DropdownButton<bool?>(
+                          //   value: state.showCompleted,
+                          //   style: AppTypography.bodyMedium,
+                          //   items: const [
+                          //     DropdownMenuItem(value: true, child: Text('Completed')),
+                          //     DropdownMenuItem(value: false, child: Text('Not Completed')),
+                          //     DropdownMenuItem(value: null, child: Text('All')),
+                          //   ],
+                          //   onChanged: (value) {
+                          //     context.read<TaskBloc>().add(FilterTasksEvent(showCompleted: value));
+                          //   },
+                          // ),
                         ],
                       );
                     },
@@ -228,7 +248,7 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         onDismissed: (direction) {
-                          context.read<TaskBloc>().add(DeleteTaskEvent(task.id!));
+                          context.read<TaskBloc>().add(DeleteTaskEvent(index));
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('${task.title} deleted')),
                           );
@@ -244,7 +264,8 @@ class _HomePageState extends State<HomePage> {
                               activeColor: AppColors.primary,
                               onChanged: (value) {
                                 if (value != null) {
-                                  context.read<TaskBloc>().add(ToggleTaskCompletionEvent(task.id!));
+                                  print('jj');
+                                  context.read<TaskBloc>().add(ToggleTaskCompletionEvent(index));
                                 }
                               },
                               semanticLabel: task.isCompleted ? 'Unmark task as completed' : 'Mark task as completed',
@@ -293,7 +314,7 @@ class _HomePageState extends State<HomePage> {
                               tooltip: 'Edit task',
                             ),
                             onTap: () {
-                              context.read<TaskBloc>().add(ToggleTaskCompletionEvent(task.id!));
+                              context.read<TaskBloc>().add(ToggleTaskCompletionEvent(index));
                             },
                           ),
                         ),
